@@ -25,7 +25,9 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
-  "windwp/nvim-autopairs", --autopair
+  'windwp/nvim-autopairs', --autopair
+
+  'ThePrimeagen/harpoon', --harpoon
   
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',

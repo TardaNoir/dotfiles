@@ -11,13 +11,12 @@ require('kanagawa').setup({
     dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
     terminalColors = true,       -- define vim.g.terminal_color_{0,17}
     colors = {                   -- add/modify theme and palette colors
-        theme = {
-            all = {
-                ui = {
-                    bg_gutter = "none"
-                }
+        palette = {},
+        theme = { wave = {}, lotus = {}, dragon = {}, all = {
+            ui = { 
+                bg_gutter = "none"
             }
-        }
+        } },
     },
     overrides = function(colors)
         local theme = colors.theme
@@ -43,13 +42,12 @@ require('kanagawa').setup({
             MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
     }
 end,
-        palette = {},
-    }
-)
+    theme = "wave",              -- Load "wave" theme when 'background' option is not set
+    background = {               -- map the value of 'background' option to a theme
+        dark = "wave",           -- try "dragon" !
+        light = "lotus"
+    },
+})
 
 -- setup must be called before loading
 vim.cmd("colorscheme kanagawa")
-
--- vim.api.nvim_set_hl(0, "Normal", {bg = "none"}) 
--- vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"}) 
-
